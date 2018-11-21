@@ -1,4 +1,4 @@
-# fred-repo/readme
+# gary-repo/readme
 
 ## about the project
 
