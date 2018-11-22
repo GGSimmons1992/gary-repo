@@ -10,10 +10,27 @@
   color:#333;
 }
 
+small{
+  background-color:gold;
+  color:#333;
+}
+
 body{
   background-image: url("https://intelligames.bg/wp-content/uploads/2016/02/catan-slider.jpg");
   background-size:cover;
   height:1200px;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+}
+
+aside img{
+  position:sticky;
+  top:0;
+}
+
+footer{
+  position:fixed;
+  bottom:0;
 }
 
 .goldText{
