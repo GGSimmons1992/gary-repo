@@ -44,4 +44,7 @@ body{
   width:300px;
 }
 
-
+.noProtection{
+  margin:0;
+  padding:0;
+}
