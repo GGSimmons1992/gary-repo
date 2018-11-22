@@ -6,7 +6,7 @@
 
 .linkText{
   background-color:gold;
-  font: size 18px;
+  font-size:30px;
   color:#333;
 }
 
@@ -22,7 +22,7 @@ body{
 }
 
 .verticalSpacer{
-  height:20px;
+  height:50px;
 }
 
 /* .col-1{
@@ -38,3 +38,10 @@ body{
 .advertizement{
   height:200%;
 }
+
+.queryBox{
+  height:200px;
+  width:300px;
+}
+
+
