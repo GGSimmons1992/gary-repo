@@ -18,7 +18,7 @@ small{
 body{
   background-image: url("https://intelligames.bg/wp-content/uploads/2016/02/catan-slider.jpg");
   background-size:cover;
-  height:1200px;
+  /* height:1200px; */
   background-repeat:no-repeat;
   background-attachment: fixed;
 }
@@ -65,3 +65,26 @@ footer{
   margin:0;
   padding:0;
 }
+
+.blog{
+  background-color:rgba(245, 241, 11, 0.5);
+}
+
+.blogImage{
+  height:20%;
+  width:20%;
+  padding: 0 15px;
+  float: left;
+}
+
+.blogImageRight{
+  height:20%;
+  width:20%;
+  padding: 0 15px;
+  float: right;
+}
+
+#victoryPointPicture{
+  height:350px;
+}
+
