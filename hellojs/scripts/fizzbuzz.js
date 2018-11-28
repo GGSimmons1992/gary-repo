@@ -13,25 +13,52 @@ var fizzCount=0;
 var buzzCount=0;
 var fizzbuzzCount=0;
 
-let fizzNumber=prompt("insert value for fizz");
-let buzzNumber=prompt("insert value for buzz");
-let finalFizzbuzz=prompt("How many fizzbuzz values do you want");
-
 let testNumber=1;
 
-function incrementer(counter,factor){
-  if(counter%factor){
-    counter++;
-    return counter;
-  }
+function assigner(varriableName){
+  let varriableValue=prompt("insert value for " + varriableName);
+  return varriableValue;
 }
 
-(function (testNumber){
+function incrementer(number,counter,factor){
+  if((number%factor)==0){
+    counter+=1;
+  }
+  return counter;
+}
+
+function multipleCheck(proposedMultiple,factor){
+  return (proposedMultiple%factor==0)
+}
+
+function fizzbuzzExercize(testNumber,finalFizzbuzz){
   if(fizzbuzzCount>=finalFizzbuzz){
     console.log('For '+finalFizzbuzz+' fizzbuzzes');
-    console.log(fizzCount+' fizzes')
-    console.log(buzzCount+' buzzes')
+    console.log(fizzCount+' fizzes');
+    console.log(buzzCount+' buzzes');
+    return;
   }
-  fizzCount=incrementer(fizzCount,)
 
-})
+  fizzCount=incrementer(testNumber,fizzCount,fizzNumber);
+  buzzCount=incrementer(testNumber,buzzCount,buzzNumber);
+  fizzbuzzCount=incrementer(testNumber,fizzbuzzCount,fizzbuzzNumber);
+
+  testNumber+=1;
+  // console.log(testNumber); //testcase
+  fizzbuzzExercize(testNumber,finalFizzbuzz);
+}
+
+//Main execution
+
+let fizzNumber=assigner("fizz")
+let buzzNumber=assigner("buzz")
+let fizzbuzzNumber=assigner("fizzbuzz")
+if (multipleCheck(fizzbuzzNumber,fizzNumber) && multipleCheck(fizzbuzzNumber,buzzNumber)){
+  let finalFizzbuzz=prompt("fizzbuzz number accepted. Please insert desired number of fizzbuzzes")
+  fizzbuzzExercize(testNumber,finalFizzbuzz);
+}else{
+  console.log("Error: suggested fizzbuzz is not a multiple of both fizz and buzz. Please refresh page")
+}
+
+
+
