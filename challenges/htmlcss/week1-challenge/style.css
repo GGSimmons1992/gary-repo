@@ -1,0 +1,12 @@
+*{
+  box-sizing:border-box;
+}
+
+.col-3{
+  width:32.18%;
+  display:inline-block;
+}
+
+.center{
+  text-align: center
+}
