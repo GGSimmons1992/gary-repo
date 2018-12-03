@@ -10,7 +10,7 @@ Winning string is sent to innerHTML*/
 
 function punctuationDeleter(givenSentence,punctuation){
   for(var char=0;char<givenSentence.length;char+=1){
-    givenSentence.replace(punctuation,'');
+    char.replace(punctuation,'');
   }
   return givenSentence
 }
