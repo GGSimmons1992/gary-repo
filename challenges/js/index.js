@@ -8,17 +8,17 @@ Have function check each word against each other
 Longer word moves on and challenges next word in array
 Winning string is sent to innerHTML*/
 
-function punctuationDeleter(givenSentence,punctuation){
-  for(var char=0;char<givenSentence.length;char+=1){
-    char.replace(punctuation,'');
-  }
-  return givenSentence
-}
+// function punctuationDeleter(givenSentence,punctuation){
+//   for(var char=0;char<givenSentence.length;char+=1){
+//     char.replace(punctuation,'');
+//   }
+//   return givenSentence
+// }
 
-sentence=punctuationDeleter(sentence,'.')
-//debugger
-sentence=punctuationDeleter(sentence,'!')
-sentence=punctuationDeleter(sentence,'?')
+// sentence=punctuationDeleter(sentence,'.')
+// //debugger
+// sentence=punctuationDeleter(sentence,'!')
+// sentence=punctuationDeleter(sentence,'?')
 
 
 

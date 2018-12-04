@@ -11,7 +11,7 @@
   var lowerAlphabet=[]
   var upperAlphabet=[]
   var numbers=[]
-  var symbols=['!','@','#','$','%','^','&','*','(',')']
+  var symbols=[' ','!','@','#','$','%','^','&','*','(',')','-','+','_']
 
   var A='A'
   var Z='Z'
@@ -28,30 +28,24 @@
     numbers.push(`${numberIndex}`)
   }
   var uncryptedArray=upperAlphabet.concat(lowerAlphabet).concat(numbers).concat(symbols)
+  var encryptedArray=[]
+  for(var plainIndex=0;plainIndex<uncryptedArray.length;plainIndex=+1){
+    var codedIndex=plainIndex
+    encryptedArray.push(uncryptedArray[codedIndex])
+  }
 
   //console.log(uncryptedArray)
 
   //End cipher code
 
-   function cipher(uncrypted){
-    for (var pIndex=0;pIndex<uncrypted.length;pIndex+=1){
-      for (var cIndex=0;cIndex<uncryptedArray.length;cIndex+=1){
-        if (uncrypted.charAt(pIndex)==uncryptedArray[cIndex]){
-          
-        }
-      }
-    }
-    return encripted
-   }
-
-  for (var passwordNumber=0;passwordNumber<passwords.length;passwordNumber=+1){
-     var ciphered=cipher()
-
+  for (var passwordNumber=0;passwordNumber<plainPasswords.length;passwordNumber=+1){
+     var ciphered=cipher(plainPasswords[passwordNumber])
+     cipheredPasswords.push(ciphered)
      }
   // }
-
+   console.log(ciphered)
    localStorage.setItem("users", users)
-   localStorage.setItem("passwords", passwords)
+   localStorage.setItem("passwords", cipheredPasswords)
 })()
 
 
