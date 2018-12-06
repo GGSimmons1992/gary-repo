@@ -54,27 +54,51 @@ function longestWord(evt){
   }
 
   var words=unpunctuated.split(" ")
-
-  var winner=words[0]
-  for (var word=1;word<words.length;word+=1){
-    var winner=wordComparison(winner,words[word])
+  var wordLengths=[]
+  for (var wordIndex=0;wordIndex<words.length;wordIndex+=1){
+    wordLengths.push((words[wordIndex]).length);
   }
+
+  var winningNumber=wordLengths[0]
+  for (var numberIndex=1;numberIndex<wordLengths.length;numberIndex+=1){
+    if (wordLengths[numberIndex]>winningNumber){
+       var winningNumber=wordLengths[numberIndex]
+     }
+  }
+
+  var winningWords=[]
+  for (var wordIndex=0;wordIndex<words.length;wordIndex+=1){
+    if (winningNumber==(words[wordIndex]).length){
+      winningWords.push(words[wordIndex]);
+    }
+  }
+
+  // var winner=words[0]
+  //  for (var word=1;word<words.length;word+=1){
+  //   var winner=wordComparison(winner,words[word])
+  //}
+
   event.preventDefault()
-  div.innerText=`Your longest word is ${winner}`
+
+  if (winningWords.length==1){
+    div.innerText=`Your longest word is ${winningWords[0]}`
+  }else{
+    div.innerText='These words tie for longest word: '+winningWords
+  }
   debugger
 }
 
 
 function wordComparison(a,b){
-  /*Compares 2 words against each other
-  and returns the */
-  if (a.length>b.length){
-    //debugger
-    return a
-  }else {
-    //debugger
-    return b
-  }
-}
+   /*Compares 2 words against each other
+   and returns the */
+   if (a.length>b.length){
+     //debugger
+     return a
+   }else {
+     //debugger
+     return b
+   }
+ }
 
 button.addEventListener('click',longestWord)

@@ -5,55 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sleepstreet Mimic</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <!-- <style href="/home/ggsimmons1992/revature/week1-challenge/styles.css"></style> -->
-  
+
 </head>
-<body></body>
-  <header>
-    <nav>
-      <div class="mainNav">
-        <a href="file:///home/ggsimmons1992/revature/week1-challenge/index.html">home</a>
+<body>
+  <header id='header'>
+    <nav class='row'>
+      <div class="mainNav col d-flex">
+        <a href="index.html" class='chosenPage'>home</a>
         <a href="">location</a>
         <a href="">accomidation</a>
         <a href="">practical</a>
         <a href="">contact</a>
       </div>
-      <div class="langNav">
-
+      <div class="langNav col d-flex justify-content-right">
+        <a href="">NL</a>
+        <a href="">FR</a>
+        <a href="" class='chosenLang'>EN</a>
+        <a href="">ES</a>
       </div>
     </nav>
   </header>
+
   <main>
-    <h1 class="center">Sleepstreet</h1>
-    <h2 id=subtitle class="center">
-        Furnished apartments and house in the heart of Ghent, to rent for short or longer term.  
-    </h2>
-    <div id=gallery>
-      <div id=picture1 class="col-3">
-        <img src="http://www.sleepstreet.be/img/sleepstreet1/sleepstreet1-3-lrg.jpg" alt="">
+    <div class='col-10 justify-content-center'>
+      <h1 class="center">Sleepstreet</h1>
+      <h2 id=subtitle class="center">
+          Furnished apartments and house in the heart of Ghent, to rent for short or longer term.
+      </h2>
+      <div class='container-fluid d-flex just-content-around row-12'>
+        <div id=picture1 class="col framed">
+          <img src="http://www.sleepstreet.be/img/sleepstreet1/sleepstreet1-3-lrg.jpg" alt="">
+        </div>
+        <div id=picture2 class="col framed">
+          <img src="http://www.sleepstreet.be/img/sleepstreet2/sleepstreet2-5-lrg.jpg" alt="">
+        </div>
+        <div id=picture3 class="col framed">
+            <img src="http://www.sleepstreet.be/img/sleepstreet3/sleepstreet3-1-lrg.jpg" alt="">
+        </div>
       </div>
-      <div id=picture2 class="col-3">
-        <img src="http://www.sleepstreet.be/img/sleepstreet2/sleepstreet2-5-lrg.jpg" alt="">
+      <div id='spacer'></div>
+      <div class='container-fluid d-flex just-content-around row-8'>
+        <div id=picture4 class="col framed">
+            <img src="http://www.sleepstreet.be/img/sleepstreet4/sleepstreet4-2-lrg.jpg" alt="">
+        </div>
+        <div id=picture5 class="col framed">
+            <img src="http://www.sleepstreet.be/img/sleepstreet5/sleepstreet5-1-lrg.jpg" alt="">
+        </div>
+
       </div>
-      <div id=picture3 class="col-3">
-          <img src="http://www.sleepstreet.be/img/sleepstreet3/sleepstreet3-1-lrg.jpg" alt="">
-      </div>
-      <div id=picture4 class="col-3">
-          <img src="http://www.sleepstreet.be/img/sleepstreet4/sleepstreet4-2-lrg.jpg" alt="">
-      </div>
-      <div id=picture5 class="col-3">
-          <img src="http://www.sleepstreet.be/img/sleepstreet5/sleepstreet5-1-lrg.jpg" alt="">
-      </div>
-      <div id=picture6 class="col-3"></div>
-    </div>
-    <div id="infoBar">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
   </main>
+
+  <aside>
+      <div id="infoBar" class='row'>
+          <div>Here are your Hosts</div>
+          <div>Hear from our guests</div>
+          <div>SleepStreet News!</div>
+          <div>Support Us on facebook</div>
+        </div>
+  </aside>
   <footer>
       Designed with love for Sleepstreet, © 2011
   </footer>

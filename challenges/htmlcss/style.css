@@ -2,11 +2,45 @@
   box-sizing:border-box;
 }
 
-.col-3{
+/* .col-3{
   width:32.18%;
   display:inline-block;
-}
+} */
 
 .center{
-  text-align: center
+  text-align: center;
+}
+
+main,aside,footer{
+  background-image: url('http://www.sleepstreet.be/img/ag-app-2.jpg');
+}
+
+#header{
+  background-color: rgba(18, 88, 18,1);
+}
+
+header a{
+  color:#ddd;
+  font-size: 20px;
+}
+
+#subtitle{
+  background-color:#ddd;
+}
+
+div>img{
+  height:300px;
+  width:400px;
+}
+
+#spacer{
+  height:20px
+}
+
+.mainNav>a{
+  margin:10px;
+}
+
+.langNav>a{
+  margin:5px;
 }
