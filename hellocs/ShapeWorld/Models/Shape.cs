@@ -1,22 +1,53 @@
 namespace ShapeWorld.Models
 {
-  public class Shape
+  public abstract class Shape
   {
     //field is a variable declared in class scope
-    protected int sides = 0;
-
+    protected int _edges = 0;//This is a backing field (A private field)
+    private int myedge;
     //property
-    private int myside;
-    public int Sides {get;private set;}// can only be set by other class members
-
-
-    public int OtherSides {get;}//can only be set by the consturctor
-    //constructor
-    internal Shape(int sides)
+    public int Edges {get;private set;}// can only be set by other class members <this makes a backing field>
+    public int AnotherEdges {get;}//can only be set by the consturctor <this makes a backing field>
+    public int YetAnotherEdges
     {
-      this.sides=sides;//very lazy don't do.
-      Sides=sides;
+      get
+      {
+        return _edges;
+      }
+
+      set
+      {
+        _edges = value;
+      }
     }
+
+    //constructor
+
+
+    protected Shape(int edges)
+    {
+      Edges = edges;
+      AnotherEdges = edges;
+      YetAnotherEdges = edges;
+    }
+
+    public virtual double Area()
+    {
+      return 1;
+    }
+
+    public double Area2()
+    {
+      return 1;
+    }
+
+    public virtual double Perimeter()
+    {
+      return 1;
+    }
+
+    public abstract double Area3();
+
     //method
     // public int GetSides()
     // {
