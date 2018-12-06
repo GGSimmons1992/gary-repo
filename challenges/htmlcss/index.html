@@ -13,14 +13,14 @@
 <body>
   <header id='header'>
     <nav class='row'>
-      <div class="mainNav col d-flex">
+      <div class="mainNav col-6 d-flex">
         <a href="index.html" class='chosenPage'>home</a>
         <a href="">location</a>
         <a href="">accomidation</a>
         <a href="">practical</a>
         <a href="">contact</a>
       </div>
-      <div class="langNav col d-flex justify-content-right">
+      <div class="langNav col-6 d-flex justify-content-end">
         <a href="">NL</a>
         <a href="">FR</a>
         <a href="" class='chosenLang'>EN</a>
@@ -29,29 +29,27 @@
     </nav>
   </header>
 
-  <main>
-    <div class='col-10 justify-content-center'>
+  <main class='d-flex justify-content-center'>
+    <div class='col-10'>
       <h1 class="center">Sleepstreet</h1>
       <h2 id=subtitle class="center">
           Furnished apartments and house in the heart of Ghent, to rent for short or longer term.
       </h2>
-      <div class='container-fluid d-flex just-content-around row-12'>
-        <div id=picture1 class="col framed">
+      <div class='container-fluid d-flex just-content-around flex-wrap'>
+        <div id=picture1 class="col-4 framed">
           <img src="http://www.sleepstreet.be/img/sleepstreet1/sleepstreet1-3-lrg.jpg" alt="">
         </div>
-        <div id=picture2 class="col framed">
+        <div id=picture2 class="col-4 framed">
           <img src="http://www.sleepstreet.be/img/sleepstreet2/sleepstreet2-5-lrg.jpg" alt="">
         </div>
-        <div id=picture3 class="col framed">
+        <div id=picture3 class="col-4 framed">
             <img src="http://www.sleepstreet.be/img/sleepstreet3/sleepstreet3-1-lrg.jpg" alt="">
         </div>
-      </div>
-      <div id='spacer'></div>
-      <div class='container-fluid d-flex just-content-around row-8'>
-        <div id=picture4 class="col framed">
+
+        <div id=picture4 class="col-4 framed">
             <img src="http://www.sleepstreet.be/img/sleepstreet4/sleepstreet4-2-lrg.jpg" alt="">
         </div>
-        <div id=picture5 class="col framed">
+        <div id=picture5 class="col-4 framed">
             <img src="http://www.sleepstreet.be/img/sleepstreet5/sleepstreet5-1-lrg.jpg" alt="">
         </div>
 
@@ -60,11 +58,11 @@
   </main>
 
   <aside>
-      <div id="infoBar" class='row'>
-          <div>Here are your Hosts</div>
-          <div>Hear from our guests</div>
-          <div>SleepStreet News!</div>
-          <div>Support Us on facebook</div>
+      <div id="infoBar" class='row d-flex'>
+          <div class='col'>Here are your Hosts</div>
+          <div class='col'>Hear from our guests</div>
+          <div class='col'>SleepStreet News!</div>
+          <div class='col'>Support Us on facebook</div>
         </div>
   </aside>
   <footer>
