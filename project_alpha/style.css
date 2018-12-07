@@ -96,3 +96,17 @@ footer{
   color:#ddd;
   cursor: pointer;
 }
+
+/* default user settings */
+#userBackground{
+  background-color: #ddd;
+}
+
+#userBackground p{
+  background-color: #ddd;
+}
+
+#profilePic{
+  height:300px;
+  width:300px;
+}
