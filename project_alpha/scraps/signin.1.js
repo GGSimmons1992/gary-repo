@@ -1,8 +1,7 @@
 //signin.js
 //Description: Logic behind login.html
 
-console.log(sessionStorage.getItem('catanKey'))
-//debugger
+//login logic
 
 
 //cipher and store passwords
@@ -42,7 +41,6 @@ var encryption=(function (){
   }
   //debugger
   //console.log(uncryptedArray)
-  //console.log(encryptedArray)
 
   function encrypter(character){
     for (var uncryptedValue=0;uncryptedValue<uncryptedArray.length;uncryptedValue++){
@@ -68,11 +66,11 @@ var encryption=(function (){
   for (var passwordNumber=0;passwordNumber<plainPasswords.length;passwordNumber++){
      var ciphered=cipher(plainPasswords[passwordNumber])
      cipheredPasswords.push(ciphered)
-     //debugger
+     debugger
      }
   // }
-   sessionStorage.setItem("users", JSON.stringify(users))
-   sessionStorage.setItem("passwords", JSON.stringify(cipheredPasswords))
+   sessionStorage.setItem("users", users)
+   sessionStorage.setItem("passwords", cipheredPasswords)
 
    return {
      codeUp:cipher
@@ -82,49 +80,24 @@ var encryption=(function (){
 
 //console.log(encryption.codeUp('abcde'))
 
+var signInButton=document.querySelector('#signInButton')
+var username=document.querySelector('#username')
+var enteredPassword=document.querySelector('#enteredPassword')
 
-function signInValidator(evt){
-  evt.preventDefault()
-  var username=document.querySelector('#username')
-  var enteredPassword=(document.querySelector('#enteredPassword')).value
-  var userlist=JSON.parse(sessionStorage.getItem('users'))
-  var passlist=JSON.parse(sessionStorage.getItem('passwords'))
-  //debugger
-  userLength=userlist.length
-  var userValidation=false
-  for (var userIndex=0;userIndex<userLength;userIndex+=1){
-    //debugger
-    if (userlist[userIndex]==username.value)
-    {
-      if (encryption.codeUp(enteredPassword)==passlist[userIndex]){
-        //console.log('green light');
-        sessionStorage.setItem('catanKey','true')
-        sessionStorage.setItem('currentUser',username.value)
-        window.location=sessionStorage.getItem('currentPage');
-        //window.location='members.html'
-        var userValidation=true;
-
-        return;
-      }else {
-        revokeAccess();
-        return;
-      }
+function validator(user,userpassword){
+  /*
+    var userlist=sessionStorage.getItem('users')
+    var passlist=sessionStorage.getItem('passwords')
+    userLength=users.length
+    var userValidation=false
+    for (var userIndex=0;userIndex<userLength;user+=1){
+      if users[]
     }
-  }
-  if (userValidation==false){
-    revokeAccess()
-    return;
-  }
+  */
 }
 
-function revokeAccess(){
-  alert('Incorrect Credentials!');
-  if (sessionStorage.getItem('catanKey')){
-    sessionStorage.removeItem('catanKey')
-    sessionStorage.removeItem('currentUser')
-  }
-}
+signInButton.addEventListener('click',validator(username,enteredPassword))
 
-var signInButton=document.getElementById('signInButton')
-signInButton.addEventListener('click',signInValidator)
+
+
 

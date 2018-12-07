@@ -27,13 +27,19 @@
               <a href="contact.html" class="col-1 linkText">
                 <span>Contact Us</span>
               </a>
-              <a href="login.html" class="col-1 linkText">
-                <span>Log in</span>
+              <a href="members.html" class="col-1 linkText">
+                <span>Profile</span>
               </a>
             </div>
         </nav>
     </div>
-    <h2 class="text-center goldText titleFont">Welcome to the Catan Guide Book</h2>
+    <div class='goldText row d-flex justify-content-between'>
+      <div id=nameplate class='col-2'></div>
+      <div class='col-8'>
+        <h2 class="text-center goldText titleFont">Welcome to the Catan Guidebook</h2>
+      </div>
+      <div class='col-2'></div>
+    </div>
   </header>
   <div class="d-flex justify-content-center">
     <main class="col-10">
@@ -88,6 +94,12 @@
     </div>
 
   </footer>
-
+  <script>
+    if (sessionStorage.getItem('catanKey')){
+      //console.log("I'm here at least")
+      var nameplate=document.getElementById('nameplate');
+      nameplate.innerHTML=`Welcome ${window.sessionStorage.getItem('currentUser')}`;
+    }
+  </script>
 </body>
 </html>
