@@ -91,3 +91,8 @@ footer{
 .spacer100px{
   height:300px;
 }
+
+#signOutLink{
+  color:#ddd;
+  cursor: pointer;
+}

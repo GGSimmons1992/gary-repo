@@ -34,11 +34,11 @@
         </nav>
     </div>
     <div class='goldText row d-flex justify-content-between'>
-      <div id=nameplate class='col-2'></div>
-      <div class='col-8'>
+      <div id=nameplate class='col-3'></div>
+      <div class='col-6'>
         <h2 class="text-center goldText titleFont">Welcome to the Catan Guidebook</h2>
       </div>
-      <div class='col-2'></div>
+      <div class='col-3'></div>
     </div>
   </header>
   <div class="d-flex justify-content-center">
@@ -98,8 +98,11 @@
     if (sessionStorage.getItem('catanKey')){
       //console.log("I'm here at least")
       var nameplate=document.getElementById('nameplate');
-      nameplate.innerHTML=`Welcome ${window.sessionStorage.getItem('currentUser')}`;
+      var message=`Welcome ${window.sessionStorage.getItem('currentUser')} `;
+      var message=message+"<span id='signOutLink'>(sign out)</span>"
+      nameplate.innerHTML=message;
     }
   </script>
+  <script src="signout.js"></script>
 </body>
 </html>

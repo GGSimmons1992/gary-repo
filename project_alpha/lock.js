@@ -7,7 +7,9 @@ Description: No key? no access.
 if (sessionStorage.getItem('catanKey')){
   //console.log("I'm here at least")
   var nameplate=document.getElementById('nameplate');
-  nameplate.innerHTML=`Welcome ${window.sessionStorage.getItem('currentUser')}`;
+  var message=`Welcome ${window.sessionStorage.getItem('currentUser')} `;
+  var message=message+"<span id='signOutLink'>(sign out)</span>"
+  nameplate.innerHTML=message;
 }else{
   //console.log(sessionStorage.getItem('catanKey'))
   //debugger
