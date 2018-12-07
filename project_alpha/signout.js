@@ -12,6 +12,7 @@ function logoffprocess(evt){
   evt.stopPropagation()
   window.sessionStorage.removeItem('currentUser');
   window.sessionStorage.removeItem('catanKey');
+  window.sessionStorage.removeItem('cipherDemo');
   window.location='index.html'
   ;
 }

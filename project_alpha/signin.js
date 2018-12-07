@@ -91,15 +91,17 @@ function signInValidator(evt){
   var passlist=JSON.parse(sessionStorage.getItem('passwords'))
   //debugger
   userLength=userlist.length
+  var enteredPasswordCiphered=encryption.codeUp(enteredPassword)
+  sessionStorage.setItem('cipherDemo',enteredPasswordCiphered)
   var userValidation=false
   for (var userIndex=0;userIndex<userLength;userIndex+=1){
     //debugger
     if (userlist[userIndex]==username.value)
     {
-      if (encryption.codeUp(enteredPassword)==passlist[userIndex]){
+      if (enteredPasswordCiphered==passlist[userIndex]){
         //console.log('green light');
         sessionStorage.setItem('catanKey','true')
-        sessionStorage.setItem('currentUser',username.value)
+        sessionStorage.setItem('currentUser',username.value);
         window.location=sessionStorage.getItem('currentPage');
         //window.location='members.html'
         var userValidation=true;
