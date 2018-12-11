@@ -17,7 +17,7 @@ namespace ShapeWorld.Models
     {
       return Area();
     }
-    public override double Perimeter()
+    public new double Perimeter()
     {
       return 1;
     }

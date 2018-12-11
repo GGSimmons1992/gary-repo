@@ -1,5 +1,6 @@
 ﻿using System;
 using ShapeWorld.Models;
+using ShapeWorld.Interfaces;
 
 namespace ShapeWorld
 {
@@ -12,7 +13,9 @@ namespace ShapeWorld
             //
             //PlayWithShapeRectangle();
             //PlayWithShapeTriangle();
-            PlayWithShape2();
+            //PlayWithShape2();
+            //PlayWithInterface();
+            PlayWithException();
 
         }
 
@@ -71,6 +74,45 @@ namespace ShapeWorld
           System.Console.WriteLine(s1.Area());
           System.Console.WriteLine(s2.Area());
           System.Console.WriteLine(s3.GetType());
+        }
+
+        private static void PlayWithInterface()
+        {
+          var r= new Rectangle();
+          var c= new Circle();
+
+          //System.Console.WriteLine(r.Perimeter);
+          //System.Console.WriteLine(c.Perimeter);
+
+        }
+
+        private static void PlayWithException()
+        {
+          var cu = new Cube();
+
+          try
+          {
+            throw new NullReferenceException("We did it!");
+            System.Console.WriteLine(cu.Volume());
+          }
+          //Go from most specific to most general
+          catch(NotImplementedException nie)
+          {
+            System.Console.WriteLine("volume cannot be computed at this time...we busy!!"+nie.Message);
+          }
+          catch(Exception e)
+          {
+
+            //logException();
+            throw e;
+            throw; //Will just bypass the error
+            System.Console.WriteLine(string.Format("{1} {0} {1}","system down...try again never!!!",e.Message));
+          }
+          finally
+          {
+            GC.Collect();
+            System.Console.WriteLine("finally ... as always!!!");
+          }
         }
 
     }
