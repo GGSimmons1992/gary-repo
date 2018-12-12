@@ -20,6 +20,16 @@
               "${workspaceFolder}/hellocs/CollectionWorld/CollectionWorld.csproj"
           ],
           "problemMatcher": "$msCompile"
-      }
+        },
+        {
+          "label": "build-serviceworld",
+          "command": "dotnet",
+          "type": "process",
+          "args": [
+              "build",
+              "${workspaceFolder}/hellocs/ServiceWorld/ServiceWorld.csproj"
+          ],
+          "problemMatcher": "$msCompile"
+        }
     ]
 }

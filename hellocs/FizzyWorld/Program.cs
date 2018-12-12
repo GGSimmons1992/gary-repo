@@ -11,16 +11,20 @@ namespace FizzyWorld
 
         private static void fizzBuzzExercise()
         {
-          
+
         }
 
-        private static void checker(int currentVal,int factor)
+        private static int checker(int currentVal,int factor)
         {
           if (currentVal%factor==0)
           {
-            return 1;
+            int validation= 1;
           }
-          else return 0;
+          else
+          {
+            int validation=  0;
+          }
+          return validatation;
         }
     }
 }
