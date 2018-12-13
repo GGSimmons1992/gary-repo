@@ -16,15 +16,12 @@ namespace FizzyWorld
 
         private static int checker(int currentVal,int factor)
         {
+          int validation=  0;
           if (currentVal%factor==0)
           {
-            int validation= 1;
+            validation= 1;
           }
-          else
-          {
-            int validation=  0;
-          }
-          return validatation;
+          return validation;
         }
     }
 }
