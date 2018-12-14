@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using FizzyWorld.Models;
 
 namespace FizzyWorld
 {
@@ -6,12 +7,26 @@ namespace FizzyWorld
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
+            fizzBuzzExercise(3,5,15,100);
         }
 
-        private static void fizzBuzzExercise()
+        private static void fizzBuzzExercise(int fizzNum,int buzzNum, int fizzbuzzNum, int finalFizzBuzz)
         {
+          var fizz=new FizzBuzzCounter("fizz",fizzNum);
+          var buzz=new FizzBuzzCounter("buzz",buzzNum);
+          var fizzbuzz=new FizzBuzzCounter("fizzbuzz",fizzbuzzNum,fizzNum,buzzNum);
 
+          int ticker=1;
+          while (fizzbuzz.CountValue<finalFizzBuzz)
+          {
+            fizz.Incrementer(ticker);
+            buzz.Incrementer(ticker);
+            fizzbuzz.Incrementer(ticker);
+            ticker+=1;
+          }
+          fizz.Printer();
+          buzz.Printer();
+          fizzbuzz.Printer();
         }
 
         private static int checker(int currentVal,int factor)

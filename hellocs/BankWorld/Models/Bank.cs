@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+
 namespace BankWorld.Models
 {
   public class Bank
   {
-    public List<Accounts> Accounts {get;set;}
-    public List<Users> Users {get;set;}
+    public List<Account> Accounts {get;set;}
+    public List<User> Users {get;set;}
 
-    public Dictionary<Users,Account> Vault {get;set;}
+    public Dictionary<User,Account> Vault {get;set;}
   }
 }
