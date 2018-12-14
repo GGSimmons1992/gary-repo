@@ -17,13 +17,15 @@
   function display(data){
     var ul = document.querySelector('#todolist');
     //var list = ""
-    debugger;
+    //debugger;
     data.forEach((element)=>{
       //list =list + " " + element.text;
-      let newBullet=document.createElement(li);
+      //debugger;
+      let newBullet=document.createElement('li');
+      //debugger;
       ul.appendChild(newBullet);
       newBullet.innerHTML=element.text;
-      debugger;
+      //debugger;
     }
     )
     //debugger;
