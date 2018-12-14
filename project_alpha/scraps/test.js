@@ -24,6 +24,15 @@ Description: Testing retrieval purposes of api
 
   function retrieve(data)
   {
+    console.log(data);
+    var usercheck='blueMoon'
+    var user=data.find((element)=>
+    {
+      return element.username==usercheck;
+    }
+    )
+    console.log(user.password)
+
     data.forEach(element => {
       console.log(typeof(element.username))
       console.log(typeof(element.password))
