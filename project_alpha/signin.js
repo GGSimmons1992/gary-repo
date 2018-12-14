@@ -44,20 +44,39 @@ function signInValidator(evt){
 
 function ajax()
 {
+  //debugger;
   fetch('https://localhost:5001/api/User').then((response)=>
   {
+    //debugger;
     response.json().then(validate)
   },(error)=>
   {
+    //debugger;
     console.log(error)
   })
 }
 
 function validate(data)
 {
+  //debugger;
   var username=(document.querySelector('#username')).value
   var enteredPassword=(document.querySelector('#enteredPassword')).value
-  
+  //debugger;
+  var user=data.find((element)=>
+  {
+    return element.username==username;
+  })
+  //debugger
+  if (user.password==enteredPassword && user.username!=undefined)
+  {
+    //debugger;
+    sessionStorage.setItem('catanKey','true')
+    sessionStorage.setItem('currentUser',user.username);
+    window.location=sessionStorage.getItem('currentPage');
+  }else
+  {
+    revokeAccess();
+  }
 }
 
 function revokeAccess(){
