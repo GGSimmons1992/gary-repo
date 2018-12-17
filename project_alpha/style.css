@@ -92,6 +92,10 @@ footer{
   height:300px;
 }
 
+#alertDiv{
+  height:200px;
+}
+
 #signOutLink{
   color:#ddd;
   cursor: pointer;

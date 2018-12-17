@@ -43,14 +43,23 @@
   </header>
   <div class="d-flex justify-content-center">
     <main class="col-10">
-      <form action="">
-        <input id='username' type="text">
-        <input id='password1' type="text">
-        <input id='password2' type="text">
-        <button type="submit"></button>
-      </form>
+      <div class="row container d-flex">
+          <div id="alertDiv" class=col-4"> </div>
+      </div>
+      <div class="row container d-flex justify-content-center">
+          <form class= "justify-content-center" action="">
+              Insert username:<br>
+              <input id='username' type="text"><br>
+              Create password:<br>
+              <input id='password1' type="password"><br>
+              Re-enter passwords<br>
+              <input id='password2' type="password"><br><br>
+              <button type="submit">Submit new credentials</button>
+          </form>
+      </div>
     </main>
   </div>
+  <br><br>
   <footer class='container d-flex justify-content-center'>
     <div class="justify-content-center">
       <small class="text-center">
