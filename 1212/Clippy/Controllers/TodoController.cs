@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
 using Clippy.Models;
+using Newtonsoft.Json.Linq;
 
 namespace Clippy.Controllers
 {
@@ -13,19 +14,14 @@ namespace Clippy.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
-        public List<Todo> Todos { get; set; }
-
-        public TodoController()
+        private static List<Todo> Todos = new List<Todo>()
         {
-          Todos = new List<Todo>()
-          {
-            new Todo(){Text = "the monday todo"},
-            new Todo(){Text = "the tuesday todo"},
-            new Todo(){Text = "the wednesday todo"},
-            new Todo(){Text = "the thursday todo"},
-            new Todo(){Text = "the friday todo"}
-          };
-        }
+          new Todo(){Text = "the monday todo"},
+          new Todo(){Text = "the tuesday todo"},
+          new Todo(){Text = "the wednesday todo"},
+          new Todo(){Text = "the thursday todo"},
+          new Todo(){Text = "the friday todo"}
+        };
 
         // GET api/values
         [HttpGet]
@@ -51,8 +47,10 @@ namespace Clippy.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<IEnumerable<Todo>> Post([FromBody] Todo value)
         {
+          Todos.Add(value);
+          return Todos;
         }
 
         // PUT api/values/5
