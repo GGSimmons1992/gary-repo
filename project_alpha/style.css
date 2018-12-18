@@ -93,7 +93,11 @@ footer{
 }
 
 #alertDiv{
-  height:200px;
+  height:100px;
+}
+
+#signup{
+  color:blue;
 }
 
 #signOutLink{

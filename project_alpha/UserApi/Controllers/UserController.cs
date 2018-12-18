@@ -21,7 +21,7 @@ namespace UserApi.Controllers
             new User("blueMoon","silence94"),
             new User("blackieChan","firetruck69")
           };
-          
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()
@@ -45,14 +45,36 @@ namespace UserApi.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<IEnumerable<User>> Post([FromBody] User value)
         {
+          Users.Add(value);
+          return Users;
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // PUT api/values/name
+        [HttpPut]
+        public ActionResult<bool> Put([FromBody] User inputtedUser)
         {
+          int stoneIndex=-1;
+          for (int index=0;index<Users.Count;index+=1)
+          {
+            if (inputtedUser.Username==Users[index].Username){
+              if (inputtedUser.Password==Users[index].Password)
+              {
+                stoneIndex=index;
+                Users[index].accessKey=inputtedUser.accessKey;
+              }
+            }
+          }
+          if (stoneIndex>=0)
+          {
+            return true;
+          }
+          else
+          {
+            return false;
+          }
+
         }
 
         // DELETE api/values/5
