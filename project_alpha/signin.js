@@ -20,14 +20,35 @@ function signInValidator(evt){
       'content-type':'application/json'
     }
   })
+
   fetch(request).then((response)=>{
-    if (response.json()==true){
-      window.location=sessionStorage.getItem('currentPage');
+    if (response.ok){
+      response.json().then(validate)
     }
     else{
       revokeAccess()
     }
   })
+
+}
+
+function validate(response)
+{
+  if (response.accessKey)
+  {
+    var alertMessage=document.querySelector('#alertDiv');
+    alertMessage.classList.add("linkText")
+    alertMessage.classList.add("text-center")
+    alertMessage.innerHTML='Success'
+    setTimeout(function(){
+      window.location="index.html";
+    },3000)
+    //window.location=sessionStorage.getItem('currentPage');
+  }
+  else
+  {
+    revokeAccess();
+  }
 
 }
 

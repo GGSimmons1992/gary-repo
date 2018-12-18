@@ -53,29 +53,33 @@ namespace UserApi.Controllers
 
         // PUT api/values/
         [HttpPut]
-        public ActionResult<bool> Put([FromBody] User inputtedUser)
+        public ActionResult<User> Put([FromBody] User inputtedUser)
         {
-          int stoneIndex=-1;
-          for (int index=0;index<Users.Count;index+=1)
-          {
-            if (inputtedUser.Username==Users[index].Username){
-              if (inputtedUser.Password==Users[index].Password)
+          bool validation=false;
+          User foundUser=Users.FirstOrDefault(u => u.Username==inputtedUser.Username);
+          if (foundUser==null){
+            validation=false;
+          }else{
+            if (foundUser.Password==inputtedUser.Password)
               {
-                stoneIndex=index;
-                Users[index].accessKey=true;
+                foundUser.accessKey=true;
+                validation=true;
               }
-            }
           }
-          if (stoneIndex>=0)
+
+          if (validation)
           {
-            return true;
+            return foundUser;
           }
           else
           {
-            return false;
+            User dummyUser=new User("","");
+            return dummyUser;
           }
-
         }
+
+
+
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
