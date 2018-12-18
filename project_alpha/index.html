@@ -94,15 +94,7 @@
     </div>
 
   </footer>
-  <script>
-    if (sessionStorage.getItem('catanKey')){
-      //console.log("I'm here at least")
-      var nameplate=document.getElementById('nameplate');
-      var message=`Welcome ${window.sessionStorage.getItem('currentUser')} `;
-      var message=message+"<span id='signOutLink'>(sign out)</span>"
-      nameplate.innerHTML=message;
-    }
-  </script>
+  <script src="nameplate.js"></script>
   <script src="signout.js"></script>
 </body>
 </html>

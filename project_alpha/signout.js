@@ -4,17 +4,24 @@ garygarthsimmons@gmail.com
 Description:
 Allows user to sign via clearing session storage and redirecting them to index.js
 */
-
+"use strict"
 var signout = document.getElementById('signOutLink')
+debugger;
+signout.addEventListener('click',logoffprocess);
 
 function logoffprocess(evt){
   //debugger
   evt.stopPropagation()
-  window.sessionStorage.removeItem('currentUser');
-  window.sessionStorage.removeItem('catanKey');
-  window.sessionStorage.removeItem('cipherDemo');
-  window.location='index.html'
-  ;
+  var url="https://localhost:5001/api/user/checker";
+  var request=new Request(url,{
+    method:'put',
+    body:'meh',
+    headers:{
+      'content-type':'application/json'
+    }
+  });
+  fetch(request)
+  window.location="index.html"
 }
 //debugger
-signout.addEventListener('click',logoffprocess)
+

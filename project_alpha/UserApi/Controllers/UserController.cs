@@ -26,20 +26,22 @@ namespace UserApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()
         {
-            return Users;
+          return Users;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<User> Get(int id)
+        // GET api/values/checker
+        [HttpGet("checker")]
+        public ActionResult<User> Get(string meh)
         {
-            try
+            User activeUser=Users.FirstOrDefault(u => u.accessKey==true);
+            if (activeUser!=null)
             {
-              return Users[id];//Ok() the quintesential 200
+              return activeUser;
             }
-            catch(ArgumentOutOfRangeException aoore)
+            else
             {
-              return NotFound(aoore.Message);//The quintesential 404.
+              User dummyUser=new User("","");
+              return dummyUser;
             }
         }
 
@@ -78,8 +80,13 @@ namespace UserApi.Controllers
           }
         }
 
-
-
+        // PUT api/values/
+        [HttpPut("checker")]
+        public void Put(string meh)
+        {
+          User activeUser=Users.FirstOrDefault(u => u.accessKey==true);
+          activeUser.accessKey=false;
+        }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
