@@ -62,7 +62,7 @@ namespace UserApi.Controllers
               if (inputtedUser.Password==Users[index].Password)
               {
                 stoneIndex=index;
-                Users[index].accessKey=inputtedUser.accessKey;
+                Users[index].accessKey=true;
               }
             }
           }
@@ -81,6 +81,7 @@ namespace UserApi.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+          
         }
     }
 }
