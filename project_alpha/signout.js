@@ -5,23 +5,34 @@ Description:
 Allows user to sign via clearing session storage and redirecting them to index.js
 */
 "use strict"
+
+setTimeout(function(){
 var signout = document.getElementById('signOutLink')
-debugger;
-signout.addEventListener('click',logoffprocess);
+signout.addEventListener('click',logoffprocess);},3000)
 
 function logoffprocess(evt){
-  //debugger
   evt.stopPropagation()
   var url="https://localhost:5001/api/user/checker";
   var request=new Request(url,{
     method:'put',
-    body:'meh',
+    body:JSON.stringify(""),
     headers:{
       'content-type':'application/json'
     }
   });
-  fetch(request)
+  fetch(request).then((response)=>{
+    if(response.ok){
+      response.json().then(signOff)
+    }
+    else{
+      console.log(response.json())
+    }
+  })
+
+}
+
+function signOff()
+{
   window.location="index.html"
 }
-//debugger
 

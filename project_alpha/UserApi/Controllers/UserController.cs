@@ -82,10 +82,11 @@ namespace UserApi.Controllers
 
         // PUT api/values/
         [HttpPut("checker")]
-        public void Put(string meh)
+        public ActionResult<User> Put([FromBody] string meh)
         {
           User activeUser=Users.FirstOrDefault(u => u.accessKey==true);
           activeUser.accessKey=false;
+          return activeUser;
         }
 
         // DELETE api/values/5

@@ -23,8 +23,11 @@ fetch(getRequest).then((response)=>{
 //--function line--
 function retrieve(data)
 {
-  var nameplate=document.getElementById('nameplate');
-  var message=`Welcome ${data.username} `;
-  var message=message+"<span id='signOutLink'>(sign out)</span>"
-  nameplate.innerHTML=message;
+  if (data.username!=""){
+    var nameplate=document.getElementById('nameplate');
+    var message=`Welcome ${data.username} `;
+    var message=message+"<span id='signOutLink'>(sign out)</span>"
+    nameplate.innerHTML=message;
+  }
+
 }
