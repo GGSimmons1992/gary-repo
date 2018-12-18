@@ -67,20 +67,24 @@ function validate(data)
     return element.username==username;
   })
   //debugger
-  if (user.password==enteredPassword && user.username!=undefined)
-  {
+
+  if (user.password==enteredPassword && user.username!=undefined){
     //debugger;
     sessionStorage.setItem('catanKey','true')
     sessionStorage.setItem('currentUser',user.username);
     window.location=sessionStorage.getItem('currentPage');
-  }else
-  {
+  }else{
     revokeAccess();
   }
+
 }
 
-function revokeAccess(){
-  alert('Incorrect Credentials!');
+function revokeAccess()
+{
+  alert('Incorrect Credentials!'); //No annoying alerts!!
+  var alertMessage=document.querySelector('#alertDiv');
+  alertMessage.classList.add("linkText")
+  alertMessage.innerHTML='Incorrect Credentials!'
   if (sessionStorage.getItem('catanKey')){
     sessionStorage.removeItem('catanKey')
     sessionStorage.removeItem('currentUser')

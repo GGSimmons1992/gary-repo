@@ -15,18 +15,13 @@ namespace UserApi.Controllers
 
     public class UserController : ControllerBase
     {
-        public List<User> Users { get; set; }
-
-        public UserController()
-        {
-          Users = new List<User>()
+        private static List<User> Users = new List<User>()
           {
             new User("redEye","password123"),
             new User("blueMoon","silence94"),
             new User("blackieChan","firetruck69")
           };
-        }
-
+          
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()

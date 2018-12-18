@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>contact us</title>
   <script>sessionStorage.setItem('currentPage','contact.html')</script>
-  <script src="lock.js"></script>
+  <!-- <script src="lock.js"></script> --> <!--Content should not be locked-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <!-- Description: This is the form page for people to contact us about suggestions & complaints. -->
@@ -90,7 +90,15 @@
       </div>
 
     </footer>
-    <script src="lock.js"></script>
+    <script>
+      if (sessionStorage.getItem('catanKey')){
+        //console.log("I'm here at least")
+        var nameplate=document.getElementById('nameplate');
+        var message=`Welcome ${window.sessionStorage.getItem('currentUser')} `;
+        var message=message+"<span id='signOutLink'>(sign out)</span>"
+        nameplate.innerHTML=message;
+      }
+    </script>
     <script src="signout.js"></script>
 </body>
 </html>
