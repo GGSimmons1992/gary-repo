@@ -15,23 +15,23 @@ namespace UserApi.Controllers
 
     public class UserController : ControllerBase
     {
-        private static List<User> Users = new List<User>()
+        internal static List<User> Users = new List<User>()
           {
             new User("redEye","password123"),
             new User("blueMoon","silence94"),
             new User("blackieChan","firetruck69")
           };
 
-        // GET api/values
+        // GET api/User
         [HttpGet]
-        public ActionResult<IEnumerable<User>> Get()
+        public ActionResult<IEnumerable<User>> FullGet()
         {
           return Users;
         }
 
-        // GET api/values/checker
+        // GET api/User/checker
         [HttpGet("checker")]
-        public ActionResult<User> Get(string meh)
+        public ActionResult<User> Get()
         {
             User activeUser=Users.FirstOrDefault(u => u.accessKey==true);
             if (activeUser!=null)
@@ -45,7 +45,7 @@ namespace UserApi.Controllers
             }
         }
 
-        // POST api/values
+        // POST api/User
         [HttpPost]
         public ActionResult<IEnumerable<User>> Post([FromBody] User value)
         {
@@ -53,7 +53,7 @@ namespace UserApi.Controllers
           return Users;
         }
 
-        // PUT api/values/
+        // PUT api/User/
         [HttpPut]
         public ActionResult<User> Put([FromBody] User inputtedUser)
         {
@@ -80,9 +80,9 @@ namespace UserApi.Controllers
           }
         }
 
-        // PUT api/values/
+        // PUT api/User/checker
         [HttpPut("checker")]
-        public ActionResult<User> Put([FromBody] string meh)
+        public ActionResult<User> Put()
         {
           User activeUser=Users.FirstOrDefault(u => u.accessKey==true);
           activeUser.accessKey=false;

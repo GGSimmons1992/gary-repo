@@ -36,14 +36,7 @@ function validate(response)
 {
   if (response.accessKey)
   {
-    var alertMessage=document.querySelector('#alertDiv');
-    alertMessage.classList.add("linkText")
-    alertMessage.classList.add("text-center")
-    alertMessage.innerHTML='Success'
-    setTimeout(function(){
-      window.location="index.html";
-    },3000)
-    //window.location=sessionStorage.getItem('currentPage');
+    window.location="index.html";
   }
   else
   {
