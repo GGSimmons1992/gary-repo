@@ -51,7 +51,7 @@ namespace UserApi.Controllers
           return Users;
         }
 
-        // PUT api/values/name
+        // PUT api/values/
         [HttpPut]
         public ActionResult<bool> Put([FromBody] User inputtedUser)
         {
@@ -81,7 +81,7 @@ namespace UserApi.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-          
+
         }
     }
 }

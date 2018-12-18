@@ -2,16 +2,10 @@
 /*
 garygarthsimmons@gmail.com
 Description: No key? no access.
+Version 2 notes: loops through users to find if any has a true accessKey
 */
-//debugger
-if (sessionStorage.getItem('catanKey')){
-  //console.log("I'm here at least")
-  var nameplate=document.getElementById('nameplate');
-  var message=`Welcome ${window.sessionStorage.getItem('currentUser')} `;
-  var message=message+"<span id='signOutLink'>(sign out)</span>"
-  nameplate.innerHTML=message;
-}else{
-  //console.log(sessionStorage.getItem('catanKey'))
-  //debugger
-  window.location='login.html';
-}
+"use strict";
+
+var url="https://localhost:5001/api/user"
+var request=new Request(url,{method:'get'});
+
