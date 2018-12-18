@@ -56,6 +56,20 @@ function ajax()
   })
 }
 
+function revokeAccess()
+{
+  //alert('Incorrect Credentials!'); //No annoying alerts!!
+  var alertMessage=document.querySelector('#alertDiv');
+  alertMessage.classList.add("linkText")
+  alertMessage.classList.add("text-center")
+  alertMessage.innerHTML='Incorrect Credentials!'
+  setTimeout(function(){alertMessage.innerHTML="Try again"},3000)
+  if (sessionStorage.getItem('catanKey')){
+    sessionStorage.removeItem('catanKey')
+    sessionStorage.removeItem('currentUser')
+  }
+}
+
 function validate(data)
 {
   //debugger;
@@ -67,8 +81,10 @@ function validate(data)
     return element.username==username;
   })
   //debugger
-
-  if (user.password==enteredPassword && user.username!=undefined){
+  if(user==undefined){
+    revokeAccess();
+  }
+  if (user.password==enteredPassword){
     //debugger;
     sessionStorage.setItem('catanKey','true')
     sessionStorage.setItem('currentUser',user.username);
@@ -77,16 +93,4 @@ function validate(data)
     revokeAccess();
   }
 
-}
-
-function revokeAccess()
-{
-  alert('Incorrect Credentials!'); //No annoying alerts!!
-  var alertMessage=document.querySelector('#alertDiv');
-  alertMessage.classList.add("linkText")
-  alertMessage.innerHTML='Incorrect Credentials!'
-  if (sessionStorage.getItem('catanKey')){
-    sessionStorage.removeItem('catanKey')
-    sessionStorage.removeItem('currentUser')
-  }
 }
