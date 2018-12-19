@@ -44,6 +44,6 @@ function validate(evt){
 function reroute(username){
   var alertDiv=document.querySelector('#alertDiv');
   alertDiv.innerHTML=`Welcome ${username}! <br> Redirecting you back to login.html`;
-  setTimeout(function(){window.location="login.html"},3000);
+  setTimeout(function(){window.location="login"},3000);
 
 }

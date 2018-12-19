@@ -14,7 +14,7 @@ fetch(request).then((response)=>{
     response.json().then(checker)
   }
   else(
-    window.location="login.html"
+    window.location="login"
   )
 })
 
@@ -22,7 +22,7 @@ fetch(request).then((response)=>{
 function checker(data)
 {
   if (data.accessKey==false){
-    window.location="login.html";
+    window.location="login";
   }
 }
 

@@ -33,6 +33,6 @@ function logoffprocess(evt){
 
 function signOff()
 {
-  window.location="index.html"
+  window.location="index"
 }
 

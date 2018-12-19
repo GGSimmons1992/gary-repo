@@ -36,7 +36,7 @@ function validate(response)
 {
   if (response.accessKey)
   {
-    window.location="index.html";
+    window.location="index";
   }
   else
   {
