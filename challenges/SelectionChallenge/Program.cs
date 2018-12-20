@@ -27,9 +27,9 @@ namespace SelectionChallenge
           {
             categoryArray[index]=index;
           }
-          for(index=10;index<someArray.Length;)
+          for(index=10;index<someArray.Length;index++)
           {
-            
+
           }
 
 
